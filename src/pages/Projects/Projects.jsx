@@ -1,46 +1,51 @@
 
 import { ReactLenis } from "lenis/react";
-import {
-  useTransform,
-  motion,
-  useScroll,
-} from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import {
   Github,
   ExternalLink,
   Code2,
   X,
+  ArrowUpRight,
 } from "lucide-react";
 
 const projects = [
   {
-    title: "Eco Return",
-    subtitle: "AI-Powered Reverse Logistics Platform",
-    description:
-      "A smart platform that analyzes returned products and recommends resale, refurbishment, recycling, or donation to reduce waste and carbon footprint.",
-    src: "/ecoReturn.png",
-    color: "#00D4AA",
-    categories: ["AI / ML", "Systems"],
-    technologies: ["AI", "Reverse Logistics", "Sustainability"],
-    status: "Live",
-    liveLink: "https://amazonsecondlife.duckdns.org/",
-    githubLink: "",
-  },
-  {
-    title: "Mess-Ease",
-    subtitle: "Smart Queue Management System",
-    description:
-      "An AI-powered mess management system that predicts waiting times and monitors crowd density using computer vision and real-time analytics.",
-    src: "/messEase.png",
-    color: "#00BFFF",
-    categories: ["AI / ML", "Computer Vision"],
-    technologies: ["Computer Vision", "Analytics", "Queue Management"],
-    status: "Project",
-    githubLink: "",
-    liveLink: "",
-  },
+  title: "Eco Return",
+  subtitle: "AI-Powered Reverse Logistics Platform",
+  description:
+    "An AI-powered platform focused on analyzing returned products and improving reverse logistics for a more sustainable e-commerce ecosystem.",
+  src: "/ecoReturn.png",
+  color: "#00D4AA",
+  categories: ["AI / ML", "Systems"],
+  technologies: [
+    "AI",
+    "Reverse Logistics",
+    "Sustainability",
+  ],
+  status: "Live",
+  liveLink: "https://amazonsecondlife.duckdns.org/",
+  githubLink: "https://github.com/KinjalGupta46/Amazonhackon",
+},
+ {
+  title: "Mess-Ease",
+  subtitle: "Smart Queue Management System",
+  description:
+    "Mess-Ease is a smart queue management application designed to improve mess operations and help users manage queues more efficiently.",
+  src: "/messEase.png",
+  color: "#00BFFF",
+  categories: ["AI / ML", "Computer Vision"],
+  technologies: [
+    "Computer Vision",
+    "Analytics",
+    "Queue Management",
+  ],
+  status: "Source Code",
+  githubLink: "https://github.com/KinjalGupta46/Mess-Ease-App",
+  liveLink: "",
+},
   {
     title: "JanSevak",
     subtitle: "Citizen Grievance Management Portal",
@@ -49,7 +54,13 @@ const projects = [
     src: "/janSevak.png",
     color: "#4F9DFF",
     categories: ["Full Stack", "Systems"],
-    technologies: ["React.js", "Node.js", "MongoDB", "Twilio", "REST APIs"],
+    technologies: [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Twilio",
+      "REST APIs",
+    ],
     status: "Source Code",
     githubLink: "",
     liveLink: "",
@@ -83,7 +94,14 @@ const projects = [
     src: "/financeTracker.png",
     color: "#A78BFA",
     categories: ["Full Stack", "Data Analytics"],
-    technologies: ["Python", "Flask", "SQL", "HTML", "CSS", "JavaScript"],
+    technologies: [
+      "Python",
+      "Flask",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
     status: "Live",
     githubLink:
       "https://github.com/KinjalGupta46/FINANCE-TRACKER-MAIN",
@@ -97,7 +115,13 @@ const projects = [
     src: "/grievo.png",
     color: "#60A5FA",
     categories: ["Full Stack", "Systems"],
-    technologies: ["React.js", "Flask", "Python", "MySQL", "JavaScript"],
+    technologies: [
+      "React.js",
+      "Flask",
+      "Python",
+      "MySQL",
+      "JavaScript",
+    ],
     status: "Source Code",
     githubLink: "https://github.com/KinjalGupta46/GRIEVO",
     liveLink: "",
@@ -126,45 +150,48 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main id="projects" className="bg-[#04081A] text-white min-h-screen">
-        <section className="relative w-full bg-[#04081A] overflow-hidden">
+      <main
+        id="projects"
+        className="min-h-screen bg-[#04081A] text-white"
+      >
+        <section className="relative w-full overflow-hidden bg-[#04081A]">
           {/* Background grid */}
-          <div className="absolute inset-0 pointer-events-none opacity-30 bg-[linear-gradient(rgba(50,80,120,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,80,120,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
+          <div className="pointer-events-none absolute inset-0 opacity-30 bg-[linear-gradient(rgba(50,80,120,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,80,120,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-          {/* Ambient background glow */}
-          <div className="absolute top-40 -left-32 w-96 h-96 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-          <div className="absolute top-[800px] -right-32 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+          {/* Ambient glow */}
+          <div className="pointer-events-none absolute top-40 -left-32 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="pointer-events-none absolute top-[800px] -right-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
 
-          <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-6 pt-28 pb-24">
+          <div className="relative z-10 mx-auto max-w-6xl px-5 pt-28 pb-24 md:px-6">
             {/* Section header */}
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-[0.3em] text-cyan-400 mb-4">
+              <p className="mb-4 text-xs uppercase tracking-[0.3em] text-cyan-400">
                 Projects
               </p>
 
-              <h1 className="text-4xl md:text-5xl font-bold">
+              <h1 className="text-4xl font-bold md:text-5xl">
                 Things I've{" "}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   built.
                 </span>
               </h1>
 
-              <p className="text-gray-400 mt-4 max-w-2xl leading-relaxed">
+              <p className="mt-4 max-w-2xl leading-relaxed text-gray-400">
                 A collection of projects exploring AI, full-stack
                 development, data analytics, and practical technology
                 solutions.
               </p>
             </div>
 
-            {/* Working category filters */}
-            <div className="flex flex-wrap gap-3 mb-10">
+            {/* Category filters */}
+            <div className="mb-10 flex flex-wrap gap-3">
               {filters.map((filter) => (
                 <button
                   key={filter}
                   type="button"
                   onClick={() => setActiveFilter(filter)}
                   aria-pressed={activeFilter === filter}
-                  className={`px-4 py-2 rounded-full border text-sm transition-all duration-300 ${
+                  className={`rounded-full border px-4 py-2 text-sm transition-all duration-300 ${
                     activeFilter === filter
                       ? "border-cyan-400 bg-cyan-400/10 text-cyan-300 shadow-md shadow-cyan-500/10"
                       : "border-gray-700 bg-white/[0.02] text-gray-300 hover:border-cyan-500/60 hover:text-cyan-300"
@@ -175,13 +202,13 @@ export default function Projects() {
               ))}
             </div>
 
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="mb-6 text-sm text-gray-500">
               Showing {filteredProjects.length}{" "}
               {filteredProjects.length === 1 ? "project" : "projects"}
             </p>
 
-            {/* Project cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Minimal project cards */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {filteredProjects.map((project, index) => (
                 <ProjectCard
                   key={project.title}
@@ -197,32 +224,32 @@ export default function Projects() {
         {/* Project details modal */}
         {selectedProject && (
           <div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
             <div
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-dialog-title"
-              className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-gray-700 bg-[#0B1224] p-6 md:p-8 shadow-2xl shadow-cyan-950/30"
+              className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-gray-700 bg-[#0B1224] p-6 shadow-2xl shadow-cyan-950/30 md:p-8"
               onClick={(event) => event.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
                 aria-label="Close project details"
-                className="absolute top-4 right-4 p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10"
+                className="absolute right-4 top-4 rounded-full p-2 text-gray-400 transition hover:bg-white/10 hover:text-white"
               >
                 <X size={20} />
               </button>
 
-              <p className="text-xs uppercase tracking-[0.25em] text-cyan-400 mb-3">
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-cyan-400">
                 Project Details
               </p>
 
               <h2
                 id="project-dialog-title"
-                className="text-2xl md:text-3xl font-bold pr-8"
+                className="pr-8 text-2xl font-bold md:text-3xl"
               >
                 {selectedProject.title}
               </h2>
@@ -234,11 +261,11 @@ export default function Projects() {
                 {selectedProject.subtitle}
               </h3>
 
-              <p className="text-gray-300 leading-relaxed mt-5">
+              <p className="mt-5 leading-relaxed text-gray-300">
                 {selectedProject.description}
               </p>
 
-              <h4 className="text-sm font-semibold text-gray-200 mt-6 mb-3">
+              <h4 className="mb-3 mt-6 text-sm font-semibold text-gray-200">
                 Technologies
               </h4>
 
@@ -246,23 +273,24 @@ export default function Projects() {
                 {selectedProject.technologies.map((technology) => (
                   <span
                     key={technology}
-                    className="text-xs text-gray-300 border border-gray-700 bg-white/[0.03] rounded-full px-3 py-2"
+                    className="rounded-full border border-gray-700 bg-white/[0.03] px-3 py-2 text-xs text-gray-300"
                   >
                     {technology}
                   </span>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-3 mt-7">
+              <div className="mt-7 flex flex-wrap gap-3">
                 {selectedProject.githubLink && (
                   <a
                     href={selectedProject.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm hover:border-cyan-400 hover:text-cyan-300"
+                    className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm transition hover:border-cyan-400 hover:text-cyan-300"
                   >
                     <Github size={17} />
                     GitHub
+                    <ArrowUpRight size={15} />
                   </a>
                 )}
 
@@ -271,7 +299,7 @@ export default function Projects() {
                     href={selectedProject.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-[#04081A]"
+                    className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-[#04081A] transition hover:brightness-110"
                     style={{ backgroundColor: selectedProject.color }}
                   >
                     <ExternalLink size={17} />
@@ -288,49 +316,41 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, index, onViewDetails }) {
-  const {
-    title,
-    subtitle,
-    description,
-    src,
-    color,
-    categories,
-    technologies,
-    status,
-    githubLink,
-    liveLink,
-  } = project;
+  const { title, subtitle, src, color, categories, status } = project;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: Math.min(index * 0.06, 0.3) }}
+      transition={{
+        duration: 0.35,
+        delay: Math.min(index * 0.06, 0.3),
+      }}
       whileHover={{ y: -5 }}
-      className="group relative rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/90 hover:border-cyan-500/50 transition-colors duration-300 shadow-xl shadow-black/20"
+      className="group relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/90 shadow-xl shadow-black/20 transition-colors duration-300 hover:border-cyan-500/50"
     >
       {/* Top accent */}
       <div
-        className="h-[2px] w-full opacity-70 group-hover:opacity-100 transition-opacity"
+        className="h-[2px] w-full opacity-70 transition-opacity group-hover:opacity-100"
         style={{
           background: `linear-gradient(90deg, transparent, ${color}, #3B82F6, transparent)`,
         }}
       />
 
-      {/* Preview image */}
-      <div className="relative h-52 md:h-60 bg-[#0B1224] overflow-hidden flex items-center justify-center p-4">
+      {/* Project preview */}
+      <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#0B1224] p-4 md:h-60">
         <img
           src={src}
-          alt={`${title} preview`}
+          alt={`${title} project preview`}
           loading="lazy"
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           onError={(event) => {
-            event.currentTarget.style.visibility = "hidden";
+            event.currentTarget.style.display = "none";
           }}
         />
 
         <span
-          className="absolute top-4 left-4 text-xs font-medium px-3 py-1.5 rounded-full border backdrop-blur-md"
+          className="absolute left-4 top-4 rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-md"
           style={{
             color,
             borderColor: `${color}60`,
@@ -341,83 +361,45 @@ function ProjectCard({ project, index, onViewDetails }) {
         </span>
       </div>
 
-      {/* Card content */}
+      {/* Minimal card content */}
       <div className="p-5 md:p-6">
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="mb-4 flex flex-wrap gap-2">
           {categories.map((category) => (
             <span
               key={category}
-              className="text-xs px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300"
+              className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1.5 text-xs text-blue-300"
             >
               {category}
             </span>
           ))}
         </div>
 
-        <h2 className="text-xl md:text-2xl font-bold text-white">
+        <h2 className="text-xl font-bold text-white md:text-2xl">
           {title}
         </h2>
 
         <h3
-          className="text-sm md:text-base font-medium mt-1"
+          className="mt-1 text-sm font-medium md:text-base"
           style={{ color }}
         >
           {subtitle}
         </h3>
 
-        <p className="text-sm text-gray-400 leading-relaxed mt-4">
-          {description}
-        </p>
+        {/* Only View Details on the card */}
+        <div className="mt-6 flex items-center justify-between border-t border-gray-800 pt-5">
+          <span className="text-sm text-gray-500">
+            Explore project
+          </span>
 
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mt-5">
-          {technologies.map((technology) => (
-            <span
-              key={technology}
-              className="text-xs text-gray-300 border border-gray-700/80 bg-white/[0.02] rounded-full px-3 py-1.5"
-            >
-              {technology}
-            </span>
-          ))}
-        </div>
-
-        {/* Actions */}
-        <div className="flex flex-wrap items-center gap-3 border-t border-gray-800 mt-6 pt-5">
           <button
             type="button"
             onClick={onViewDetails}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-200 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-200 transition hover:border-cyan-400 hover:text-cyan-300"
           >
             <Code2 size={16} />
             View Details
+            <ArrowUpRight size={15} />
           </button>
-
-          {githubLink && (
-            <motion.a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-cyan-300 transition-colors"
-              whileHover={{ y: -2 }}
-            >
-              <Github size={17} />
-              GitHub
-            </motion.a>
-          )}
-
-          {liveLink && (
-            <motion.a
-              href={liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-              style={{ color }}
-              whileHover={{ y: -2 }}
-            >
-              <ExternalLink size={16} />
-              Live Demo
-            </motion.a>
-          )}
         </div>
       </div>
     </motion.article>
