@@ -43,6 +43,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -57,29 +58,33 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
-      <div className="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
-        <div className="p-[2px] md:rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
-          <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
-
-            {/* Mobile Menu */}
-            <div className="flex justify-between items-center md:hidden px-2">
-              <a href="#home" className="text-white font-bold">
+    <header className="fixed left-0 top-0 z-50 w-full bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
+      <div className="w-full md:fixed md:left-1/2 md:top-3 md:w-auto md:-translate-x-1/2 md:transform">
+        <div className="animate-gradient-x bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 p-[1.5px] md:rounded-full">
+          <nav className="bg-gray-900/95 px-3 py-2 backdrop-blur-md md:rounded-full md:px-4 md:py-1.5">
+            {/* Mobile header */}
+            <div className="flex items-center justify-between px-2 md:hidden">
+              <a
+                href="#home"
+                className="text-sm font-bold text-white"
+              >
                 Portfolio
               </a>
 
               <button
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="p-2 text-sm text-white"
               >
                 <FaBars />
               </button>
             </div>
 
-            {/* Navigation */}
+            {/* Navigation links */}
             <div className={`${isMenuOpen ? "block" : "hidden"} md:block`}>
-              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0">
-
+              <div className="flex flex-col gap-1 py-3 md:flex-row md:items-center md:gap-0.5 md:py-0">
                 {navLinks.map(({ id, icon: Icon, text }) => (
                   <a
                     key={id}
@@ -88,19 +93,17 @@ export default function Header() {
                       setActiveLink(id);
                       setIsMenuOpen(false);
                     }}
-                    className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 hover:bg-white/10
-                    ${
+                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium transition-all duration-300 md:rounded-full md:px-2.5 md:py-1.5 ${
                       activeLink === id
                         ? "bg-white/15 text-white"
-                        : "text-gray-300 hover:text-white"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
                     }`}
                   >
                     <Icon
-                      className={`text-base ${
+                      className={`shrink-0 text-xs ${
                         activeLink === id ? "scale-110" : ""
                       }`}
                     />
-
                     <span>{text}</span>
                   </a>
                 ))}
@@ -112,7 +115,7 @@ export default function Header() {
 
       <style>{`
         @keyframes gradient-x {
-          0%,100% {
+          0%, 100% {
             background-position: 0% 50%;
           }
           50% {
@@ -128,4 +131,3 @@ export default function Header() {
     </header>
   );
 }
-
