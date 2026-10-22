@@ -1,6 +1,6 @@
+
 export default function About() {
   const cards = [
-    "🎓 3rd Year Student",
     "🤖 AI/ML Learner",
     "💻 Full-Stack Developer",
     "🧩 Problem Solver",
@@ -37,7 +37,7 @@ export default function About() {
             </p>
 
             <p className="italic text-gray-400 mt-4">
-              "Driven by curiosity, powered by consistency."
+              "Curiosity sparks ideas, consistency turns them into reality."
             </p>
           </div>
 
@@ -62,19 +62,17 @@ export default function About() {
           </h2>
 
           <p className="text-gray-300 leading-8 text-lg">
-            Passionate about Full-Stack Development and Artificial Intelligence,
-            I enjoy building impactful applications and continuously learning
-            modern technologies. I am currently exploring Machine Learning,
-            Deep Learning, NLP, and Computer Vision while strengthening my
-            software development and problem-solving skills.
+            I'm driven by curiosity and the desire to build things that make a
+            real difference. I enjoy exploring ideas, understanding problems,
+            and turning them into practical solutions that are useful to people.
           </p>
 
           <blockquote className="border-l-4 border-cyan-400 pl-6 italic text-gray-400 leading-8">
-            Beyond coding, I enjoy solving Data Structures and Algorithms
-            problems, participating in hackathons, and collaborating on projects
-            that challenge me to grow as a developer. I strongly believe in
-            continuous learning and strive to transform ideas into practical and
-            impactful digital solutions.
+            Every project is an opportunity to learn something new, challenge
+            my thinking, and discover better ways to approach problems. I value
+            creativity, consistency, and the willingness to step outside my
+            comfort zone. I'm always looking for opportunities to collaborate,
+            take on meaningful challenges, and create technology that matters.
           </blockquote>
 
           <div>
@@ -83,7 +81,7 @@ export default function About() {
             </h3>
 
             <p className="text-gray-400 mt-2">
-              B.Tech CSE Student • Full-Stack Developer • AI Enthusiast
+              Aspiring Software Engineer • Lifelong Learner • Problem Solver
             </p>
           </div>
 
