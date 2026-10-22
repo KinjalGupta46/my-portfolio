@@ -13,45 +13,42 @@ import {
 
 const projects = [
   {
-  title: "Eco Return",
-  subtitle: "AI-Powered Reverse Logistics Platform",
-  description:
-    "An AI-powered platform focused on analyzing returned products and improving reverse logistics for a more sustainable e-commerce ecosystem.",
-  src: "/ecoReturn.png",
-  color: "#00D4AA",
-  categories: ["AI / ML", "Systems"],
-  technologies: [
-    "AI",
-    "Reverse Logistics",
-    "Sustainability",
-  ],
-  status: "Live",
-  liveLink: "https://amazonsecondlife.duckdns.org/",
-  githubLink: "https://github.com/KinjalGupta46/Amazonhackon",
-},
- {
-  title: "Mess-Ease",
-  subtitle: "Smart Queue Management System",
-  description:
-    "Mess-Ease is a smart queue management application designed to improve mess operations and help users manage queues more efficiently.",
-  src: "/messEase.png",
-  color: "#00BFFF",
-  categories: ["AI / ML", "Computer Vision"],
-  technologies: [
-    "Computer Vision",
-    "Analytics",
-    "Queue Management",
-  ],
-  status: "Source Code",
-  githubLink: "https://github.com/KinjalGupta46/Mess-Ease-App",
-  liveLink: "",
-},
+    title: "Eco Return",
+    subtitle: "AI-Powered Reverse Logistics Platform",
+    description:
+      "An AI-powered platform focused on analyzing returned products and improving reverse logistics for a more sustainable e-commerce ecosystem.",
+    color: "#00D4AA",
+    categories: ["AI / ML", "Systems"],
+    technologies: [
+      "AI",
+      "Reverse Logistics",
+      "Sustainability",
+    ],
+    status: "Live",
+    liveLink: "https://amazonsecondlife.duckdns.org/",
+    githubLink: "https://github.com/KinjalGupta46/Amazonhackon",
+  },
+  {
+    title: "Mess-Ease",
+    subtitle: "Smart Queue Management System",
+    description:
+      "Mess-Ease is a smart queue management application designed to improve mess operations and help users manage queues more efficiently.",
+    color: "#00BFFF",
+    categories: ["AI / ML", "Computer Vision"],
+    technologies: [
+      "Computer Vision",
+      "Analytics",
+      "Queue Management",
+    ],
+    status: "Source Code",
+    githubLink: "https://github.com/KinjalGupta46/Mess-Ease-App",
+    liveLink: "",
+  },
   {
     title: "JanSevak",
     subtitle: "Citizen Grievance Management Portal",
     description:
       "A civic technology platform that enables citizens to report local issues, track resolution progress, and improve accountability through structured workflows and administrative dashboards.",
-    src: "/janSevak.png",
     color: "#4F9DFF",
     categories: ["Full Stack", "Systems"],
     technologies: [
@@ -70,7 +67,6 @@ const projects = [
     subtitle: "Finance Management Application",
     description:
       "A finance management application that helps users organize expenses, track budgets, and visualize financial activity through dashboards. Internship contributions included data processing and validation, backend and database operations, and REST API testing.",
-    src: "/finsight.png",
     color: "#34D399",
     categories: ["Full Stack", "Data Analytics"],
     technologies: [
@@ -91,7 +87,6 @@ const projects = [
     subtitle: "Personal Finance Management",
     description:
       "A Flask-based web application for managing income and expenses, organizing transactions, and analyzing spending patterns through category-wise and payment-method insights.",
-    src: "/financeTracker.png",
     color: "#A78BFA",
     categories: ["Full Stack", "Data Analytics"],
     technologies: [
@@ -112,7 +107,6 @@ const projects = [
     subtitle: "Grievance Management Platform",
     description:
       "A centralized platform that simplifies grievance management by enabling users to submit complaints, track resolution progress, and manage grievances through a structured workflow.",
-    src: "/grievo.png",
     color: "#60A5FA",
     categories: ["Full Stack", "Systems"],
     technologies: [
@@ -156,14 +150,14 @@ export default function Projects() {
       >
         <section className="relative w-full overflow-hidden bg-[#04081A]">
           {/* Background grid */}
-          <div className="pointer-events-none absolute inset-0 opacity-30 bg-[linear-gradient(rgba(50,80,120,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,80,120,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(50,80,120,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,80,120,0.15)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30" />
 
           {/* Ambient glow */}
-          <div className="pointer-events-none absolute top-40 -left-32 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
-          <div className="pointer-events-none absolute top-[800px] -right-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="pointer-events-none absolute -left-32 top-40 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-32 top-[800px] h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
 
-          <div className="relative z-10 mx-auto max-w-6xl px-5 pt-28 pb-24 md:px-6">
-            {/* Section header */}
+          <div className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-28 md:px-6">
+            {/* Section heading */}
             <div className="mb-10">
               <p className="mb-4 text-xs uppercase tracking-[0.3em] text-cyan-400">
                 Projects
@@ -184,7 +178,7 @@ export default function Projects() {
             </div>
 
             {/* Category filters */}
-            <div className="mb-10 flex flex-wrap gap-3">
+            <div className="mb-8 flex flex-wrap gap-3">
               {filters.map((filter) => (
                 <button
                   key={filter}
@@ -202,13 +196,13 @@ export default function Projects() {
               ))}
             </div>
 
-            <p className="mb-6 text-sm text-gray-500">
+            <p className="mb-5 text-sm text-gray-500">
               Showing {filteredProjects.length}{" "}
               {filteredProjects.length === 1 ? "project" : "projects"}
             </p>
 
-            {/* Minimal project cards */}
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* Image-free project cards */}
+            <div className="grid grid-cols-1 gap-5">
               {filteredProjects.map((project, index) => (
                 <ProjectCard
                   key={project.title}
@@ -261,10 +255,12 @@ export default function Projects() {
                 {selectedProject.subtitle}
               </h3>
 
+              {/* Description appears only in the modal */}
               <p className="mt-5 leading-relaxed text-gray-300">
                 {selectedProject.description}
               </p>
 
+              {/* Technologies appear only in the modal */}
               <h4 className="mb-3 mt-6 text-sm font-semibold text-gray-200">
                 Technologies
               </h4>
@@ -280,6 +276,7 @@ export default function Projects() {
                 ))}
               </div>
 
+              {/* Project links */}
               <div className="mt-7 flex flex-wrap gap-3">
                 {selectedProject.githubLink && (
                   <a
@@ -300,7 +297,9 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-[#04081A] transition hover:brightness-110"
-                    style={{ backgroundColor: selectedProject.color }}
+                    style={{
+                      backgroundColor: selectedProject.color,
+                    }}
                   >
                     <ExternalLink size={17} />
                     Live Demo
@@ -316,7 +315,7 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, index, onViewDetails }) {
-  const { title, subtitle, src, color, categories, status } = project;
+  const { title, subtitle, color, categories, status } = project;
 
   return (
     <motion.article
@@ -326,44 +325,16 @@ function ProjectCard({ project, index, onViewDetails }) {
         duration: 0.35,
         delay: Math.min(index * 0.06, 0.3),
       }}
-      whileHover={{ y: -5 }}
-      className="group relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/90 shadow-xl shadow-black/20 transition-colors duration-300 hover:border-cyan-500/50"
+      whileHover={{ y: -3 }}
+      className="group rounded-2xl border border-gray-800 bg-gray-900/70 p-5 shadow-lg shadow-black/10 transition-all duration-300 hover:border-cyan-500/50 md:p-6"
     >
-      {/* Top accent */}
-      <div
-        className="h-[2px] w-full opacity-70 transition-opacity group-hover:opacity-100"
-        style={{
-          background: `linear-gradient(90deg, transparent, ${color}, #3B82F6, transparent)`,
-        }}
-      />
+      {/* Title, categories and status */}
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="text-xl font-bold text-white md:text-2xl">
+            {title}
+          </h2>
 
-      {/* Project preview */}
-      <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#0B1224] p-4 md:h-60">
-        <img
-          src={src}
-          alt={`${title} project preview`}
-          loading="lazy"
-          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-          onError={(event) => {
-            event.currentTarget.style.display = "none";
-          }}
-        />
-
-        <span
-          className="absolute left-4 top-4 rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-md"
-          style={{
-            color,
-            borderColor: `${color}60`,
-            backgroundColor: "#04081Acc",
-          }}
-        >
-          {status}
-        </span>
-      </div>
-
-      {/* Minimal card content */}
-      <div className="p-5 md:p-6">
-        <div className="mb-4 flex flex-wrap gap-2">
           {categories.map((category) => (
             <span
               key={category}
@@ -374,33 +345,41 @@ function ProjectCard({ project, index, onViewDetails }) {
           ))}
         </div>
 
-        <h2 className="text-xl font-bold text-white md:text-2xl">
-          {title}
-        </h2>
-
-        <h3
-          className="mt-1 text-sm font-medium md:text-base"
-          style={{ color }}
+        <span
+          className="shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium"
+          style={{
+            color,
+            borderColor: `${color}60`,
+            backgroundColor: `${color}0D`,
+          }}
         >
-          {subtitle}
-        </h3>
+          {status}
+        </span>
+      </div>
 
-        {/* Only View Details on the card */}
-        <div className="mt-6 flex items-center justify-between border-t border-gray-800 pt-5">
-          <span className="text-sm text-gray-500">
-            Explore project
-          </span>
+      {/* Subtitle */}
+      <h3
+        className="mt-3 text-sm font-medium md:text-base"
+        style={{ color }}
+      >
+        {subtitle}
+      </h3>
 
-          <button
-            type="button"
-            onClick={onViewDetails}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-200 transition hover:border-cyan-400 hover:text-cyan-300"
-          >
-            <Code2 size={16} />
-            View Details
-            <ArrowUpRight size={15} />
-          </button>
-        </div>
+      {/* Only the View Details button is shown on the card */}
+      <div className="mt-5 flex items-center justify-between border-t border-gray-800 pt-5">
+        <span className="text-sm text-gray-500">
+          Explore project
+        </span>
+
+        <button
+          type="button"
+          onClick={onViewDetails}
+          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-200 transition hover:border-cyan-400 hover:text-cyan-300"
+        >
+          <Code2 size={16} />
+          View Details
+          <ArrowUpRight size={15} />
+        </button>
       </div>
     </motion.article>
   );
@@ -411,7 +390,6 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
